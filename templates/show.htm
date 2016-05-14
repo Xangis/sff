@@ -1,0 +1,42 @@
+{% extends "base.htm" %}{% load i18n %}
+{% block title %}{{ show.name }} (TV Series) | The Science Fiction and Fantasy Database{% endblock title %}
+
+{% block description %}Get details for the television show {{ show.name }}, including episodes, cast, and production details.{% endblock description %}
+{% block extrahead %}
+<link rel="canonical" href="http://sffdb.com/show/{{ show.slug }}/" />
+{% endblock extrahead %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-4">
+<br/>
+{% include 'adsense.inc' %}
+</div>
+<div class="col-md-8">
+<h2>{{ show.name }}</h2>
+{% if show.creators.all %}Creators: {% for creator in show.creators.all %}<a href="/person/{{ creator.slug }}/">{{ creator }}</a>{% if not forloop.last %}, {% endif %} {% endfor %}<br />{% endif %}
+{% if show.year %}Start Year: {{ show.year }}<br />{% endif %}
+{% if show.num_seasons %}Number of Seasons: {{ show.num_seasons }}<br />{% endif %}
+{% if show.num_episodes %}Number of Episodes: {{ show.num_episodes }}<br />{% endif %}
+{% if show.get_distribution_company_display %}Distribution Company: <a href="/company/{{ show.get_distribution_company_display }}">{{ show.get_distribution_company_display }}</a><br />{% endif %}
+{% if show.length %}Episode Length: {{ show.length }} minutes<br />{% endif %}
+{% if show.theme_composer %}Theme Song By: <a href="/person/{{ show.theme_composer.slug }}/">{{ show.theme_composer }}</a><br />{% endif %}
+{% if show.get_genre_display %}Genre: {{ show.get_genre_display }}<br />{% endif %}
+{% if show.subgenre %}Subgenre: <a href="/subgenre/{{ show.get_subgenre_display|slugify }}/">{{ show.get_subgenre_display }}</a><br />{% endif %}
+{% if roles %}
+<h3>Regular Cast</h3>
+{% for role in roles %}
+<p><a href="/person/{{ role.person.slug }}/">{{ role.person.name }}</a> {{ role.character }}</p>
+{% endfor %}
+{% endif %}
+{% if episodes %}
+<h3>Episodes</h3>
+{% for episode in episodes %}
+Season {{ episode.season }}, Episode {{ episode.episode_num }} - <a href="/show/{{ show.slug }}/episode/{{ episode.slug }}/">{{ episode.name }}</a><br />
+{% endfor %}
+{% endif %}
+<br />
+<p><a href="/">Back</a> to front page.</p>
+</div>
+</div>
+{% endblock content %}

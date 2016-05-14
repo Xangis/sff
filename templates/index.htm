@@ -1,0 +1,69 @@
+{% extends "base.htm" %}{% load i18n %}
+{% block title %}The Science Fiction and Fantasy Database{% endblock title %}
+{% block description %}An encyclopedia of science fiction and fantasy movies, television, actors, actresses, writers, directors, producers, and composers.{% endblock description %}
+{% block extrahead %}
+<meta name="google-site-verification" content="lXo1aWWUEm9IKuYqcla0yxVGEzsosmqI4QmJoMtW1ug" />
+<meta name="msvalidate.01" content="46D044C2A2181D7D0BFD6FF19630FDEC" />
+<link rel="canonical" href="http://sffdb.com/" />
+{% endblock extrahead %}
+
+{% include 'header.inc' %}
+
+{% block content %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=649581031815449";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="row">
+	<div class="col-md-4">
+		<h2>TV Series</h2>
+		<p>
+		{% for show in shows %}
+		<a href="/show/{{ show.slug }}/">{{ show }}</a><br />
+		{% endfor %}
+		</p>
+	</div>
+	<div class="col-md-4">
+		<h2>Movies</h2>
+		<p>
+		{% for movie in movies %}
+		<a href="/movie/{{ movie.slug }}/">{{ movie }}</a><br />
+		{% endfor %}
+		</p>
+	</div>
+	<div class="col-md-4">
+		<h2>People</h2>
+		<p>
+		{% for person in persons %}
+		<a href="/person/{{ person.slug }}/">{{ person }}</a><br />
+		{% endfor %}
+		</p>
+		<p><a href="/people/">See all...</a></p>
+	</div>
+</div>
+<p class="centered"><a href="/subgenres/">Browse Subgenres</a></p>
+<p class="centered">
+<a href="http://mystarship.com/cgi-bin/cgiwrap/mystarship/autorank/rankem.cgi?id=Xangis">101 Sci-Fi Links</a>
+<!-- BEGIN Top SciFi Fantasy Sites CODE -->
+<a href="http://www.ultimatetopsites.com/general/scifan07/">
+<img src="http://www.ultimatetopsites.com/bin/votepicture/?scifan07&cat=general&ID=202&textlink=1">
+Top SciFi Fantasy Sites</a>
+<!-- END Top SciFi Fantasy Sites CODE -->
+&nbsp;&nbsp;
+<!-- BEGIN Fantasy Top Sites CODE -->
+<a href="http://usa.ultimatetopsites.com/games/LadyS/">
+<img src="http://usa.ultimatetopsites.com/bin/votepicture/?LadyS&cat=games&ID=31&textlink=1">
+Fantasy Top Sites</a>
+<!-- END Fantasy Top Sites CODE -->
+</p>
+<div class="centered"><div class="fb-like" data-width="230px" data-href="https://www.facebook.com/sffdb" data-layout="standard" data-action="like" data-show-faces="false" data-share="true" data-colorscheme="dark"></div></div>
+{% endblock content %}
+{% include 'copyright.inc' %}
+{% block postfooter %}
+<p class="copyright"><a href="/privacy-policy/">Privacy Policy</a> &bull; <a href="/contact/">Contact Info</a></p>
+{% endblock postfooter %}

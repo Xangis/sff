@@ -1,0 +1,32 @@
+{% extends "base.htm" %}{% load i18n %}
+{% block title %}Movies and TV from the Subgenre {{ subgenre }}{% endblock title %}
+{% block description %}{{ subgenre }} science fiction and fantasy entertainment.{% endblock description %}
+{% block extrahead %}
+<link rel="canonical" href="http://sffdb.com/subgenre/{{ subgenre|slugify }}/" />
+{% endblock extrahead %}
+{% block content %}
+<div class="row">
+<div class="col-md-4">
+<br/>
+{% include 'adsense.inc' %}
+</div>
+<div class="col-md-8">
+<h2>{{ subgenre|capfirst }}</h2>
+<p class="subhead">Movies and television in category {{ subgenre }}.</p>
+<h3>TV Series</h3>
+<p>
+{% for show in shows %}
+<a href="/show/{{ show }}/">{{ show }}</a><br />
+{% endfor %}
+</p>
+<h3>Movies</h3>
+<p>
+{% for movie in movies %}
+<a href="/movie/{{ movie.slug }}/">{{ movie }}</a><br />
+{% endfor %}
+</p>
+<p><a href="/subgenres/">Back to subgenre list.</a></p>
+<p><a href="/">Back to front page.</a></p>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% load i18n %}{% spaceless %}
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>{% block title %}SFFDB | The Science Fiction and Fantasy Database{% endblock title %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="{% block description %}The science fiction and fantasy database.{% endblock description %}" />
+<meta name="robots" content="index,follow" />
+<link href="/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" type="text/css" />
+<link rel="icon" type="image/png" href="/Saucer32.png" />
+<script src="/jquery.js"></script>
+<script src="/bootstrap.js"></script>
+{% include 'analytics.inc' %}
+{% block extrahead %}{% endblock extrahead %}
+</head>
+<body>
+{% include 'header.inc' %}
+
+<div class="clear"></div>
+
+<div class="content dark">
+{% block content %}
+{% endblock content %}
+</div>
+
+<div class="clear"></div>
+
+{% include 'copyright.inc' %}
+{% block postfooter %}{% endblock postfooter %}
+</body>
+</html>{% endspaceless %}

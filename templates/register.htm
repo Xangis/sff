@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head><title>Create Account</title>
+<link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
+<link rel="icon" type="image/png" href="/Saucer32.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Register for an account on SFFDB.com." />
+{% include 'analytics.inc' %}
+</head>
+<body>
+<h1>SFFDB.com - Create Account</h1>
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+  {% if user_form.errors %}
+    <p class="error">{{ user_form.errors }}</p>
+  {% endif %}
+
+  <form action='.' method='post'>
+{% csrf_token %}
+<table>
+    <tr><td><label for="username">User name:</label>
+    </td><td><input type="text" name="username" value="" id="username"></td></tr>
+    <tr><td><label for="email">Email*:</label>
+    </td><td><input type="text" name="email" value="" id="email"></td></tr>
+    <tr><td><label for="password1">Password:</label>
+    </td><td><input type="password" name="password1" value="" id="password1"></td></tr>
+    <tr><td><label for="password2">Password Again:</label>
+    </td><td><input type="password" name="password2" value="" id="password2"></td></tr>
+    <tr><td colspan="2"><center><input type="submit" value="Register" />
+    <input type="hidden" name="next" value="{{ next }}" /></center></td>
+  </table></form>
+<p>Creating an account is free, and it is free to use all parts of SFFDB.com.</p>
+<p class="subhead">* - We don't have plans to email you any crap or anything, this is just to keep track of what shows you've rated.</p>
+{% include 'copyright.inc' %}
+</body>
+</html>

@@ -1,0 +1,96 @@
+{% extends "base.htm" %}{% load i18n %}
+{% load showtype %}
+{% block title %}{{ person.name }} | The Science Fiction and Fantasy Database{% endblock title %}
+{% block description %}Look up {{ person.name }}'s contributions to science fiction and fantasy entertainment.{% endblock description %}
+{% block extrahead %}
+<link rel="canonical" href="http://sffdb.com/person/{{ person.slug }}/" />
+{% endblock extrahead %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-4">
+	{% include 'adsense.inc' %}
+</div>
+<div class="col-md-8">
+	<h2>{{ person.name }}</h2>
+	{% if person.alternate_name %}Also known as: {{ person.alternate_name }}<br />{% endif %}
+	{% if person.bio %}{{ person.bio }}<br />{% endif %}
+	{% if person.born_date %}Born: {{ person.born_date }}<br />{% endif %}
+	{% if person.birth_city %}Birth City: {{ person.birth_city }}<br />{% endif %}
+	{% if person.died_date %}Died: {{ person.died_date }}<br />{% endif %}
+	{% if person.death_city %}Death City: {{ person.death_city }}<br />{% endif %}
+	{% if person.height %}Height: {{ person.height }} inches<br />{% endif %}
+	{% if person.image %}{{ person.image }}<br />{% endif %}
+	{% if roles %}
+	<h3>Acting Roles</h3>
+	{% for role in roles %}
+	{% if role.show|showtype == 'episode' %}
+	<a href="/show/{{ role.show.episode.tvshow.slug }}/episode/{{ role.show.slug }}/">{{ role.show.episode.tvshow.name }} - S{{ role.show.episode.season }}E{{ role.show.episode.episode_num }} - {{ role.show.name }}</a> ({{ role.show.year }})
+	{% elif role.show|showtype == 'show' %}
+	<a href="/show/{{ role.show.slug }}/">{{ role.show.name }}</a> ({{ role.show.year }})
+	{% else %}
+	<a href="/movie/{{ role.show.slug }}/">{{ role.show.name }}</a> ({{ role.show.year }})
+	{% endif %}
+	- {{ role.character }}<br />
+	{% endfor %}
+	{% endif %}
+	{% if produced %}
+	<h3>Produced</h3>
+	{% for item in produced %}
+	{% if item|showtype == 'episode' %}
+	<a href="/show/{{ item.tvshow.slug }}/episode/{{ item.slug }}/">{{ item.tvshow.name }} - {{ item.name }}</a> ({{ item.year }})<br>
+	{% else %}
+	<a href="/{{ item|showtype }}/{{ item.slug }}/">{{ item.name }}</a> ({{ item.year }})<br>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+	{% if directed %}
+	<h3>Directed</h3>
+	{% for item in directed %}
+	{% if item|showtype == 'episode' %}
+	<a href="/show/{{ item.tvshow.slug }}/episode/{{ item.slug }}/">{{ item.tvshow.name }} - {{ item.name }}</a> ({{ item.year }})<br>
+	{% else %}
+	<a href="/{{ item|showtype }}/{{ item.slug }}/">{{ item.name }}</a> ({{ item.year }})<br>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+	{% if wrote %}
+	<h3>Wrote</h3>
+	{% for item in wrote %}
+	{% if item|showtype == 'episode' %}
+	<a href="/show/{{ item.tvshow.slug }}/episode/{{ item.slug }}/">{{ item.tvshow.name }} - {{ item.name }}</a> ({{ item.year }})<br>
+	{% else %}
+	<a href="/{{ item|showtype }}/{{ item.slug }}/">{{ item.name }}</a> ({{ item.year }})<br>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+	{% if composed %}
+	<h3>Composed</h3>
+	{% for item in composed %}
+	{% if item|showtype == 'episode' %}
+	<a href="/show/{{ item.tvshow.slug }}/episode/{{ item.slug }}/">{{ item.tvshow.name }} - {{ item.name }}</a> ({{ item.year }})<br>
+	{% else %}
+	<a href="/{{ item|showtype }}/{{ item.slug }}/">{{ item.name }}</a> ({{ item.year }})<br>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+	{% if created %}
+	<h3>Created</h3>
+	{% for item in created %}
+	{% if item|showtype == 'episode' %}
+	<a href="/show/{{ item.tvshow.slug }}/episode/{{ item.slug }}/">{{ item.tvshow.name }} - {{ item.name }}</a> ({{ item.year }})<br>
+	{% else %}
+	<a href="/{{ item|showtype }}/{{ item.slug }}/">{{ item.name }}</a> ({{ item.year }})<br>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+	<br/>
+	<p><a href="/people/">Back to people.</a></p>
+	<p><a href="/">Back to front page.</a></p>
+</div>
+</div>
+{% endblock content %}
+
+{% block postfooter %}
+<!-- Score = {{ person.score }} -->
+{% endblock postfooter %}

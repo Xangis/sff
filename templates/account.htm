@@ -1,0 +1,34 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>User Details for {{ user }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Account details for {{ user }}." />
+<meta name="robots" content="index,follow" />
+<link rel="stylesheet" href="/style.css" type="text/css" />
+<link rel="icon" type="image/png" href="/Saucer32.png" />
+{% include 'analytics.inc' %}
+</head>
+<body>
+<h1><a href="/">SFFDB.com</a></h1>
+<h2>Details for User: {{ user }}</h2>
+<table>
+<tr>
+<td>
+{% if ratings %}
+<h3>You have rated the following television shows, movies, and episodes:</h3>
+{% for rating in ratings %}
+<a href="/{{ rating.show.id }}/{{ rating.show.slug }}/">{{ rating.show }}</a> rated {{ rating.rating }}<br />
+{% endfor %}
+{% else %}
+<p>You have not rated any shows yet.</p>
+<p>To rate a show, browse to an item and click the rating at the bottom.</p>
+{% endif %}
+</td>
+</tr>
+</table>
+{% include 'copyright.inc' %}
+</body>
+</html>

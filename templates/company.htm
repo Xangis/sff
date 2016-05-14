@@ -1,0 +1,26 @@
+{% extends "base.htm" %}{% load i18n %}
+{% block title %}{{ companyname }} - Science Fiction and Fantasy Entertainment{% endblock title %}
+{% block description %}Science fiction and fantasy entertainment created by {{ companyname }}.{% endblock description %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-4">
+	{% include "adsense.inc" %}
+</div>
+<div class="col-md-8">
+	<h2>Movies and Television by {{ companyname }}</h1>
+	<h3>TV Series</h3>
+	<p>
+	{% for show in shows %}
+	<a href="/show/{{ show }}/">{{ show }}</a><br />
+	{% endfor %}
+	</p>
+	<h3>Movies</h3>
+	<p>
+	{% for movie in movies %}
+	<a href="/movie/{{ movie.slug }}/">{{ movie }}</a><br />
+	{% endfor %}
+	</p>
+</div>
+</div>
+{% endblock content %}

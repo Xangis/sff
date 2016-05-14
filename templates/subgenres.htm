@@ -1,0 +1,29 @@
+{% extends "base.htm" %}{% load i18n %}
+{% block title %}Science Fiction and Fantasy Subgenres{% endblock title %}
+{% block description %}Subgenres in science fiction and fantasy entertainment.{% endblock description %}
+{% block extrahead %}
+<link rel="canonical" href="http://sffdb.com/subgenres/" />
+{% endblock extrahead %}
+{% block content %}
+<div class="row">
+<div class="col-md-4">
+<br/>
+{% include 'adsense.inc' %}
+</div>
+<div class="col-md-8">
+<h2>Subgenres</h2>
+<h3>Sci-Fi</h3>
+{% for subgenre in scifi %}
+<p><a href="/subgenre/{{ subgenre.slug }}/">{{ subgenre.name }}</a></p>
+{% endfor %}
+<h3>Fantasy</h3>
+{% for subgenre in fantasy %}
+<p><a href="/subgenre/{{ subgenre.slug }}/">{{ subgenre.name }}</a></p>
+{% endfor %}
+<h3>Horror</h3>
+{% for subgenre in horror %}
+<p><a href="/subgenre/{{ subgenre.slug }}/">{{ subgenre.name }}</a></p>
+{% endfor %}
+</div>
+</div>
+{% endblock content %}

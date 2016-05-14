@@ -1,0 +1,60 @@
+{% extends "base.htm" %}{% load i18n %}
+{% block title %}{{ show.name }} S{{episode.season }}E{{ episode.episode_num }} - {{ episode.name }}{% endblock %}
+{% block description %}Get details for the episode of {{ show.name }} titled {{ episode.name }} including cast, guest stars, and air date.{% endblock description %}
+{% block extrahead %}
+<link rel="canonical" href="http://sffdb.com/show/{{ show.slug }}/episode/{{ episode.slug }}/" />
+{% endblock extrahead %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-4">
+	{% include "adsense.inc" %}
+</div>
+<div class="col-md-8">
+	<h2><a href="/show/{{ show.slug }}/">{{ show.name }}</a> Episode: "{{ episode.name }}"</h2>
+	Season: {{ episode.season }}<br />
+	Episode: {{ episode.episode_num }}<br />
+	{% if episode.air_date %}Air Date: {{ episode.air_date }}{% else %}Year: {{ episode.year }}{% endif %}<br />
+	{% if episode.length %}Length: {{ episode.length }} minutes<br />{% endif %}
+	{% if episode.director %}Director: <a href="/person/{{ episode.director.slug }}/">{{ episode.director }}</a><br />{% endif %}
+	{% if episode.producer %}Producer: <a href="/person/{{ episode.producer.slug }}/">{{ episode.producer }}</a><br />{% endif %}
+	{% if episode.writers.all %}Writers: {% for writer in episode.writers.all %}<a href="/person/{{ writer.slug }}/">{{ writer }}</a>{% if not forloop.last %}, {% endif %} {% endfor %}<br />{% endif %}
+	{% if episode.description %}<p>{{ episode.description }}</p>{% endif %}
+	{% if regular_roles %}
+	<h3>Regular Cast</h3>
+	{% for role in regular_roles %}
+	<p><a href="/person/{{ role.person.slug }}/">{{ role.person.name }}</a> {{ role.character }}</p>
+	{% endfor %}
+	{% endif %}
+	{% if guest_roles %}
+	<h3>Guest Stars</h3>
+	{% for role in guest_roles %}
+	<p><a href="/person/{{ role.person.slug }}/">{{ role.person.name }}</a> {{ role.character }}</p>
+	{% endfor %}
+	{% endif %}
+	<p><b>Overall Rating: {% if rating %}{{ rating }} ({{ num_ratings }} votes).{% else %}Not yet rated.{% endif %}</b></p>
+	{% if user %}
+	{% if my_rating %}
+	<p>You rated this episode {{ my_rating }}.</p>
+	{% else %}
+	<p>Rate this episode: 
+	<a href="/show/{{ episode.id }}/rate/1/">1</a> 
+	<a href="/show/{{ episode.id }}/rate/2/">2</a> 
+	<a href="/show/{{ episode.id }}/rate/3/">3</a> 
+	<a href="/show/{{ episode.id }}/rate/4/">4</a> 
+	<a href="/show/{{ episode.id }}/rate/5/">5</a> 
+	<a href="/show/{{ episode.id }}/rate/6/">6</a> 
+	<a href="/show/{{ episode.id }}/rate/7/">7</a> 
+	<a href="/show/{{ episode.id }}/rate/8/">8</a> 
+	<a href="/show/{{ episode.id }}/rate/9/">9</a> 
+	<a href="/show/{{ episode.id }}/rate/10/">10</a> 
+	</p>
+	{% endif %}
+	{% else %}
+	<p><a href="/register/">Register</a> or <a href="/login/">Login</a> to rate this episode.</p>
+	{% endif %}
+	<p>{% if prev %}<a href="/show/{{ prev.tvshow.slug }}/episode/{{ prev.slug }}/">Previous Episode: {{ prev.name }}</a>&nbsp;&nbsp;&nbsp;&nbsp; {% endif %} {% if next %}<a href="/show/{{ next.tvshow.slug }}/episode/{{ next.slug }}/">Next Episode: {{ next.name }}</a>{% endif %}</p>
+	<p><a href="/">Back</a> to front page.</p>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,6 @@
+Django==1.8.13
+uWSGI==2.0.9
+Fabric==1.10.1
+psycopg2==2.5.4
+csscompressor==0.9.3
+Pillow==3.2.0

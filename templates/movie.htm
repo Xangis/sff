@@ -1,0 +1,61 @@
+{% extends "base.htm" %}{% load i18n %}{% load humanize %}
+{% block title %}{{ movie.name }} (Movie) | The Science Fiction and Fantasy Database{% endblock title %}
+{% block description %}Get details for the movie {{ movie.name }} including cast, director, producer, and box office returns.{% endblock description %}
+{% block extrahead %}
+<link rel="canonical" href="http://sffdb.com/movie/{{ movie.slug }}/" />
+{% endblock extrahead %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-4">
+	{% include 'adsense.inc' %}
+</div>
+<div class="col-md-8">
+	<h2>{{ movie.name }}</h2>
+	<p>
+	{% if movie.description %}{{ movie.description }}<br />{% endif %}
+	{% if movie.year %}Year: {{ movie.year }}<br />{% endif %}
+	{% if movie.director %}Director: <a href="/person/{{ movie.director.slug }}/">{{ movie.director }}</a><br />{% endif %}
+	{% if movie.producer.all %}Producers: {% for prod in movie.producer.all %}<a href="/person/{{ prod.slug }}/">{{ prod }}</a>{% if not forloop.last %}, {% endif %} {% endfor %}<br />{% endif %}
+	{% if movie.writers.all %}Writers: {% for writer in movie.writers.all %}<a href="/person/{{ writer.slug }}/">{{ writer }}</a> {% endfor %}<br />{% endif %}
+	{% if movie.music_by %}Music By: <a href="/person/{{ movie.music_by.slug }}/">{{ movie.music_by }}</a><br />{% endif %}
+	{% if movie.budget %}Budget: {{ movie.budget|intword }} dollars<br />{% endif %}
+	{% if movie.box_office %}Box Office: {{ movie.box_office|intword }} dollars<br />{% endif %}
+	{% if movie.length %}Length: {{ movie.length }} minutes<br />{% endif %}
+	{% if movie.get_distribution_company_display %}Distribution Company: <a href="/company/{{ movie.get_distribution_company_display }}">{{ movie.get_distribution_company_display }}</a><br />{% endif %}
+	{% if movie.get_genre_display %}Genre: {{ movie.get_genre_display }}<br />{% endif %}
+	{% if movie.subgenre %}Subgenre: <a href="/subgenre/{{ movie.get_subgenre_display|slugify }}/">{{ movie.get_subgenre_display }}</a><br />{% endif %}
+	</p>
+	{% if roles %}
+	<h3>Cast</h3>
+	{% for role in roles %}
+	<p><a href="/person/{{ role.person.slug }}/">{{ role.person.name }}</a> {{ role.character }}</p>
+	{% endfor %}
+	{% endif %}
+	<p><b>Overall Rating: {% if rating %}{{ rating }} ({{ num_ratings }} votes).{% else %}Not yet rated.{% endif %}</b></p>
+	{% if user %}
+	{% if my_rating %}
+	<p>You rated this episode {{ my_rating }}.</p>
+	{% else %}
+	<p>Rate this episode: 
+	<a href="/show/{{ movie.id }}/rate/1/">1</a> 
+	<a href="/show/{{ movie.id }}/rate/2/">2</a> 
+	<a href="/show/{{ movie.id }}/rate/3/">3</a> 
+	<a href="/show/{{ movie.id }}/rate/4/">4</a> 
+	<a href="/show/{{ movie.id }}/rate/5/">5</a> 
+	<a href="/show/{{ movie.id }}/rate/6/">6</a> 
+	<a href="/show/{{ movie.id }}/rate/7/">7</a> 
+	<a href="/show/{{ movie.id }}/rate/8/">8</a> 
+	<a href="/show/{{ movie.id }}/rate/9/">9</a> 
+	<a href="/show/{{ movie.id }}/rate/10/">10</a> 
+	</p>
+	{% endif %}
+	{% else %}
+	<p><a href="/register/">Register</a> or <a href="/login/">Login</a> to rate this episode.</p>
+	{% endif %}
+	<br />
+	<p><a href="/">Back</a> to front page.</p>
+	<br />
+</div>
+</div>
+{% endblock content %}

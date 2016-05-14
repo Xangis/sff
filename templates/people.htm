@@ -1,0 +1,23 @@
+{% extends "base.htm" %}{% load i18n %}
+{% block title %}Actors, Actresses, Directors, Writers, and Producers of Science Fiction and Fantasy{% endblock title %}
+{% block description %}List of science fiction and fantasy actors, actresses, directors, writers, and producers.{% endblock %}
+{% block extrahead %}
+<link rel="canonical" href="http://sffdb.com/people/" />
+{% endblock extrahead %}
+{% block content %}
+<div class="row">
+<div class="col-md-12">
+<table width="98%">
+<tr>
+<td colspan="4"><h3>People</h3></td>
+</tr>
+{% for person in persons %}
+{% cycle '<tr><td>' '<td>' '<td>' '<td>' %}
+<a href="/person/{{ person.slug }}/">{{ person }}</a><br />
+{% cycle '</td>' '</td>' '</td>' '</td></tr>' %}
+{% endfor %}
+</tr>
+</table>
+</div>
+</div>
+{% endblock content %}
