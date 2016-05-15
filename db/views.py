@@ -149,7 +149,7 @@ def view_company(request, name):
     except ObjectDoesNotExist:
         try:
             company = Company.objects.get(name=name)
-            return HttpResponseRedirect('/company/' + company.slug + '/')
+            return HttpResponsePermanentRedirect('/company/' + company.slug + '/')
         except ObjectDoesNotExist:
             raise Http404
 
@@ -162,7 +162,7 @@ def view_subgenre(request, name):
     except ObjectDoesNotExist:
         try:
             subgenre = Subgenre.objects.get(name=name)
-            return HttpResponseRedirect('/subgenre/' + subgenre.slug + '/')
+            return HttpResponsePermanentRedirect('/subgenre/' + subgenre.slug + '/')
         except:
             raise Http404
 
