@@ -48,6 +48,8 @@ class Company(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=60)
     slug = models.CharField(max_length=60, null=True, blank=True)
+    founded = models.IntegerField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
