@@ -48,6 +48,10 @@ class SubgenreAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'slug')
     search_fields = ('name', 'slug')
 
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'slug')
+    search_fields = ('name', 'slug')
+
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(TVSeries, TVSeriesAdmin)
 admin.site.register(Person, PersonAdmin)
@@ -56,3 +60,4 @@ admin.site.register(Book, BookAdmin)
 admin.site.register(Episode, EpisodeAdmin)
 admin.site.register(Rating, RatingAdmin)
 admin.site.register(Subgenre, SubgenreAdmin)
+admin.site.register(Company, CompanyAdmin)
