@@ -18,11 +18,11 @@
 {% if show.year %}Start Year: {{ show.year }}<br />{% endif %}
 {% if show.num_seasons %}Number of Seasons: {{ show.num_seasons }}<br />{% endif %}
 {% if show.num_episodes %}Number of Episodes: {{ show.num_episodes }}<br />{% endif %}
-{% if show.get_distribution_company_display %}Distribution Company: <a href="/company/{{ show.get_distribution_company_display }}">{{ show.get_distribution_company_display }}</a><br />{% endif %}
+{% if show.distribution_company %}Distribution Company: <a href="/company/{{ show.distribution_company.slug }}">{{ show.distribution_company.name }}</a><br />{% endif %}
 {% if show.length %}Episode Length: {{ show.length }} minutes<br />{% endif %}
 {% if show.theme_composer %}Theme Song By: <a href="/person/{{ show.theme_composer.slug }}/">{{ show.theme_composer }}</a><br />{% endif %}
 {% if show.get_genre_display %}Genre: {{ show.get_genre_display }}<br />{% endif %}
-{% if show.subgenre %}Subgenre: <a href="/subgenre/{{ show.get_subgenre_display|slugify }}/">{{ show.get_subgenre_display }}</a><br />{% endif %}
+{% if show.subgenre %}Subgenre: <a href="/subgenre/{{ show.subgenre.slug }}/">{{ show.subgenre.name }}</a><br />{% endif %}
 {% if roles %}
 <h3>Regular Cast</h3>
 {% for role in roles %}

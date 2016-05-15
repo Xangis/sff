@@ -141,12 +141,17 @@ def view_episode(request, show_name, episode_name):
         'my_rating': my_rating, 'next': next, 'prev': prev })
 
 def view_company(request, name):
-    for key, value in COMPANY_CHOICES:
-        if name == value:
-            shows = TVSeries.objects.filter(distribution_company=key)
-            movies = Movie.objects.filter(distribution_company=key)
-            return render_to_response('company.htm', {'shows': shows, 'movies': movies, 'companyname': value })
-    raise Http404
+    try:
+        company = Company.objects.get(slug=name)
+        shows = TVSeries.objects.filter(distribution_company=company)
+        movies = Movie.objects.filter(distribution_company=company)
+        return render_to_response('company.htm', {'shows': shows, 'movies': movies, 'company': company })
+    except ObjectDoesNotExist:
+        try:
+            company = Company.objects.get(name=name)
+            return HttpResponseRedirect('/company/' + company.slug + '/')
+        except ObjectDoesNotExist:
+            raise Http404
 
 def view_subgenre(request, name):
     try:

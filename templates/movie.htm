@@ -22,9 +22,9 @@
 	{% if movie.budget %}Budget: {{ movie.budget|intword }} dollars<br />{% endif %}
 	{% if movie.box_office %}Box Office: {{ movie.box_office|intword }} dollars<br />{% endif %}
 	{% if movie.length %}Length: {{ movie.length }} minutes<br />{% endif %}
-	{% if movie.get_distribution_company_display %}Distribution Company: <a href="/company/{{ movie.get_distribution_company_display }}">{{ movie.get_distribution_company_display }}</a><br />{% endif %}
+	{% if movie.distribution_company %}Distribution Company: <a href="/company/{{ movie.distribution_company.slug }}">{{ movie.distribution_company.name }}</a><br />{% endif %}
 	{% if movie.get_genre_display %}Genre: {{ movie.get_genre_display }}<br />{% endif %}
-	{% if movie.subgenre %}Subgenre: <a href="/subgenre/{{ movie.get_subgenre_display|slugify }}/">{{ movie.get_subgenre_display }}</a><br />{% endif %}
+	{% if movie.subgenre %}Subgenre: <a href="/subgenre/{{ movie.subgenre.slug }}/">{{ movie.subgenre.name }}</a><br />{% endif %}
 	</p>
 	{% if roles %}
 	<h3>Cast</h3>

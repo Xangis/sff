@@ -1,6 +1,6 @@
 {% extends "base.htm" %}{% load i18n %}
-{% block title %}{{ companyname }} - Science Fiction and Fantasy Entertainment{% endblock title %}
-{% block description %}Science fiction and fantasy entertainment created by {{ companyname }}.{% endblock description %}
+{% block title %}{{ company.name }} - Science Fiction and Fantasy Entertainment{% endblock title %}
+{% block description %}Science fiction and fantasy entertainment created by {{ company.name }}.{% endblock description %}
 
 {% block content %}
 <div class="row">
@@ -8,7 +8,7 @@
 	{% include "adsense.inc" %}
 </div>
 <div class="col-md-8">
-	<h2>Movies and Television by {{ companyname }}</h1>
+	<h2>Movies and Television by {{ company.name }}</h1>
 	<h3>TV Series</h3>
 	<p>
 	{% for show in shows %}

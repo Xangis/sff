@@ -2,25 +2,6 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.template.defaultfilters import slugify
 
-COMPANY_CHOICES = (
-  (2, '20th Century Fox'),
-  (4, 'Alliance Atlantis'),
-  (12, 'AMC'),
-  (15, 'BBC One'),
-  (10, 'Buena Vista'),
-  (0, 'CBS Paramount'),
-  (5, 'Columbia Pictures'),
-  (8, 'Hallmark Entertainment'),
-  (1, 'MGM'),
-  (3, 'NBC Universal'),
-  (13, 'New Line Cinema'),
-  (11, 'Orion Pictures'),
-  (14, 'Sony Pictures'),
-  (6, 'TriStar Pictures'),
-  (9, 'Walt Disney'),
-  (7, 'Warner Brothers'),
-)
-
 GENRE_CHOICES = (
   (0, 'Science Fiction'),
   (1, 'Fantasy'),
@@ -82,12 +63,12 @@ class Show(models.Model):
 
 class Movie(Show):
     director = models.ForeignKey('Person', null=True, blank=True, related_name='movie_director')
-    producer = models.ManyToManyField('Person', related_name='movie_producer')
-    writers = models.ManyToManyField('Person', related_name='movie_writers')
+    producer = models.ManyToManyField('Person', blank=True, related_name='movie_producer')
+    writers = models.ManyToManyField('Person', blank=True, related_name='movie_writers')
     music_by = models.ForeignKey('Person', null=True, blank=True, related_name='movie_musicby')
     budget = models.IntegerField(null=True, blank=True)
     box_office = models.BigIntegerField(null=True, blank=True)
-    distribution_company = models.IntegerField(choices=COMPANY_CHOICES, null=True, blank=True)
+    distribution_company = models.ForeignKey('Company', null=True, blank=True)
     genre = models.IntegerField(choices=GENRE_CHOICES)
     subgenre = models.ForeignKey('Subgenre', null=True, blank=True)
 
@@ -106,10 +87,10 @@ class Movie(Show):
 class TVSeries(Show):
     num_seasons = models.IntegerField()
     num_episodes = models.IntegerField(null=True, blank=True)
-    distribution_company = models.IntegerField(choices=COMPANY_CHOICES, null=True, blank=True)
+    distribution_company = models.ForeignKey('Company', null=True, blank=True)
     genre = models.IntegerField(choices=GENRE_CHOICES)
     subgenre = models.ForeignKey('Subgenre', null=True, blank=True)
-    creators = models.ManyToManyField('Person', related_name='tvseries_creators')
+    creators = models.ManyToManyField('Person', blank=True, related_name='tvseries_creators')
     theme_composer = models.ForeignKey('Person', null=True, blank=True, related_name='tvseries_themecomposer')
 
     def save(self, *args, **kwargs):
@@ -130,7 +111,7 @@ class Episode(Show):
     episode_num = models.IntegerField()
     director = models.ForeignKey('Person', null=True, blank=True, related_name='episode_director')
     producer = models.ForeignKey('Person', null=True, blank=True, related_name='episode_producer')
-    writers = models.ManyToManyField('Person', related_name='episode_writers')
+    writers = models.ManyToManyField('Person', blank=True, related_name='episode_writers')
     air_date = models.DateField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
