@@ -1,20 +1,21 @@
 http://sffdb.com/
-http://sffdb.com/company/20th%20Century%20Fox/
-http://sffdb.com/company/Alliance%20Atlantis/
-http://sffdb.com/company/AMC/
-http://sffdb.com/company/BBC%20One/
-http://sffdb.com/company/Buena%20Vista/
-http://sffdb.com/company/CBS%20Paramount/
-http://sffdb.com/company/Columbia%20Pictures/
-http://sffdb.com/company/Hallmark%20Entertainment/
-http://sffdb.com/company/MGM/
-http://sffdb.com/company/NBC%20Universal/
-http://sffdb.com/company/New%20Line%20Cinema/
-http://sffdb.com/company/Orion%20Pictures/
-http://sffdb.com/company/Sony%20Pictures/
-http://sffdb.com/company/TriStar%20Pictures/
-http://sffdb.com/company/Walt%20Disney/
-http://sffdb.com/company/Warner%20Brothers/
+http://sffdb.com/company/20th-century-fox/
+http://sffdb.com/company/alliance-atlantis/
+http://sffdb.com/company/amc/
+http://sffdb.com/company/bbc-one/
+http://sffdb.com/company/buena-vista/
+http://sffdb.com/company/cbs-paramount/
+http://sffdb.com/company/columbia-pictures/
+http://sffdb.com/company/hallmark-entertainment/
+http://sffdb.com/company/mgm/
+http://sffdb.com/company/miramax/
+http://sffdb.com/company/nbc-universal/
+http://sffdb.com/company/new-line-cinema/
+http://sffdb.com/company/orion-pictures/
+http://sffdb.com/company/sony-pictures/
+http://sffdb.com/company/tristar-pictures/
+http://sffdb.com/company/walt-disney/
+http://sffdb.com/company/warner-brothers/
 http://sffdb.com/contact/
 http://sffdb.com/login/
 http://sffdb.com/movie/a-knights-tale/
@@ -33,6 +34,7 @@ http://sffdb.com/movie/contact/
 http://sffdb.com/movie/district-9/
 http://sffdb.com/movie/dragonheart/
 http://sffdb.com/movie/dune/
+http://sffdb.com/movie/from-dusk-till-dawn/
 http://sffdb.com/movie/green-lantern/
 http://sffdb.com/movie/hellboy/
 http://sffdb.com/movie/independence-day/
@@ -302,6 +304,7 @@ http://sffdb.com/person/charlie-brooker/
 http://sffdb.com/person/charlie-coffey/
 http://sffdb.com/person/charlie-creed-miles/
 http://sffdb.com/person/charlton-heston/
+http://sffdb.com/person/cheech-marin/
 http://sffdb.com/person/cheryl-cain/
 http://sffdb.com/person/chip-chalmers/
 http://sffdb.com/person/chiwetel-ejiofor/
@@ -382,6 +385,7 @@ http://sffdb.com/person/dan-lane/
 http://sffdb.com/person/danny-adcock/
 http://sffdb.com/person/danny-elfman/
 http://sffdb.com/person/danny-pudi/
+http://sffdb.com/person/danny-trejo/
 http://sffdb.com/person/dan-obannon/
 http://sffdb.com/person/dan-spielman/
 http://sffdb.com/person/dan-vebber/
@@ -529,6 +533,7 @@ http://sffdb.com/person/eric-serra/
 http://sffdb.com/person/eric-tuchman/
 http://sffdb.com/person/eric-wallace/
 http://sffdb.com/person/erik-holmey/
+http://sffdb.com/person/ernest-liu/
 http://sffdb.com/person/ernest-r-dickerson/
 http://sffdb.com/person/ernie-reyes-jr/
 http://sffdb.com/person/ethan-matthew-lawrence/
@@ -564,6 +569,7 @@ http://sffdb.com/person/freddie-jones/
 http://sffdb.com/person/frederick-rappaport/
 http://sffdb.com/person/fred-gerber/
 http://sffdb.com/person/fredric-lane/
+http://sffdb.com/person/fred-williamson/
 http://sffdb.com/person/gabrielle-beaumont/
 http://sffdb.com/person/gaby-chiappe/
 http://sffdb.com/person/gail-harvey/
@@ -582,6 +588,7 @@ http://sffdb.com/person/gene-roddenberry/
 http://sffdb.com/person/geoff-bennett/
 http://sffdb.com/person/geoffrey-blake/
 http://sffdb.com/person/george-clayton-johnson/
+http://sffdb.com/person/george-clooney/
 http://sffdb.com/person/george-lucas/
 http://sffdb.com/person/george-mihalka/
 http://sffdb.com/person/george-takei/
@@ -601,6 +608,7 @@ http://sffdb.com/person/goran-gajic/
 http://sffdb.com/person/gordon-dawson/
 http://sffdb.com/person/grace-jones/
 http://sffdb.com/person/grace-lee-whitney/
+http://sffdb.com/person/graeme-revell/
 http://sffdb.com/person/graham-baker/
 http://sffdb.com/person/grant-mcaloon/
 http://sffdb.com/person/grant-rosenberg/
@@ -628,6 +636,7 @@ http://sffdb.com/person/harry-victor/
 http://sffdb.com/person/hart-hanson/
 http://sffdb.com/person/harve-bennett/
 http://sffdb.com/person/harvey-hart/
+http://sffdb.com/person/harvey-keitel/
 http://sffdb.com/person/harvey-laidman/
 http://sffdb.com/person/hayden-penettiere/
 http://sffdb.com/person/hayley-atwell/
@@ -729,6 +738,7 @@ http://sffdb.com/person/jeanne-tripplehorn/
 http://sffdb.com/person/jeannot-szwarc/
 http://sffdb.com/person/jed-whedon/
 http://sffdb.com/person/jeff-bridges/
+http://sffdb.com/person/jeff-corey/
 http://sffdb.com/person/jeffery-levy/
 http://sffdb.com/person/jeff-f-king/
 http://sffdb.com/person/jeff-goldblum/
@@ -884,6 +894,7 @@ http://sffdb.com/person/julie-christie/
 http://sffdb.com/person/julie-graham/
 http://sffdb.com/person/julie-newmar/
 http://sffdb.com/person/juliet-may/
+http://sffdb.com/person/juliette-lewis/
 http://sffdb.com/person/jurgen-prochnow/
 http://sffdb.com/person/justin-monjo/
 http://sffdb.com/person/kaj-erik-eriksen/
@@ -1107,6 +1118,7 @@ http://sffdb.com/person/michael-mcmurray/
 http://sffdb.com/person/michael-miller/
 http://sffdb.com/person/michael-nankin/
 http://sffdb.com/person/michael-oherlihy/
+http://sffdb.com/person/michael-parks/
 http://sffdb.com/person/michael-pattinson/
 http://sffdb.com/person/michael-p-fox/
 http://sffdb.com/person/michael-piller/
@@ -1262,6 +1274,7 @@ http://sffdb.com/person/pip-carter/
 http://sffdb.com/person/p-j-pesce/
 http://sffdb.com/person/pk-simonds/
 http://sffdb.com/person/polly-walker/
+http://sffdb.com/person/quentin-tarantino/
 http://sffdb.com/person/rachel-ticotin/
 http://sffdb.com/person/rafe-judkins/
 http://sffdb.com/person/raffaella-de-laurentiis/
@@ -1339,6 +1352,7 @@ http://sffdb.com/person/robert-mark-kamen/
 http://sffdb.com/person/robert-m-young/
 http://sffdb.com/person/robert-patrick/
 http://sffdb.com/person/robert-picardo/
+http://sffdb.com/person/robert-rodriguez/
 http://sffdb.com/person/robert-scheerer/
 http://sffdb.com/person/robert-sparr/
 http://sffdb.com/person/robert-tapert/
@@ -1391,6 +1405,7 @@ http://sffdb.com/person/saffron-burrows/
 http://sffdb.com/person/salli-richardson-whitfield/
 http://sffdb.com/person/sally-caves/
 http://sffdb.com/person/sally-lapiduss/
+http://sffdb.com/person/salma-hayek/
 http://sffdb.com/person/sam-egan/
 http://sffdb.com/person/sam-neill/
 http://sffdb.com/person/sam-raimi/
@@ -1534,6 +1549,7 @@ http://sffdb.com/person/tom-j-astle/
 http://sffdb.com/person/tom-lister-jr/
 http://sffdb.com/person/tommy-lee-jones/
 http://sffdb.com/person/tommy-thompson/
+http://sffdb.com/person/tom-savini/
 http://sffdb.com/person/tom-skerritt/
 http://sffdb.com/person/tom-szollosi/
 http://sffdb.com/person/toni-graphia/
